@@ -39,12 +39,12 @@ endif
 #
 #      ISHIKO_CPP_BASEPLATFORM_ROOT  Path to the Ishiko/C++ BasePlatform installation
 #      ISHIKO_CPP_ERRORS_ROOT        Path to the Ishiko/C++ Errors installation
+#      ISHIKO_CPP_FMT_ROOT           Path to the fmt installation
 #      ISHIKO_CPP_MEMORY_ROOT        Path to the Ishiko/C++ Memory installation
 #      ISHIKO_CPP_BOOST_ROOT         Path to the Boost installation
 #      ISHIKO_CPP_TEXT_ROOT          Path to the Ishiko/C++ Text installation
 #      ISHIKO_CPP_BOTAN_ROOT         Path to the Botan installation
 #      ISHIKO_CPP_NETWORKING_ROOT    Path to the Ishiko/C++ Networking installation
-#      ISHIKO_CPP_FMT_ROOT           Path to the fmt installation
 #      ISHIKO_CPP_TIME_ROOT          Path to the Ishiko/C++ Time installation
 #      ISHIKO_CPP_TYPES_ROOT         Path to the Ishiko/C++ Types installation
 
@@ -77,6 +77,8 @@ endif
 ISHIKO_CPP_BASEPLATFORM_ROOT ?= $(ISHIKO_CPP_ROOT)/base-platform
 # Path to the Ishiko/C++ Errors installation
 ISHIKO_CPP_ERRORS_ROOT ?= $(ISHIKO_CPP_ROOT)/errors
+# Path to the fmt installation
+ISHIKO_CPP_FMT_ROOT ?= $(FMT_ROOT)
 # Path to the Ishiko/C++ Memory installation
 ISHIKO_CPP_MEMORY_ROOT ?= $(ISHIKO_CPP_ROOT)/memory
 # Path to the Boost installation
@@ -87,8 +89,6 @@ ISHIKO_CPP_TEXT_ROOT ?= $(ISHIKO_CPP_ROOT)/text
 ISHIKO_CPP_BOTAN_ROOT ?= $(BOTAN_ROOT)
 # Path to the Ishiko/C++ Networking installation
 ISHIKO_CPP_NETWORKING_ROOT ?= $(ISHIKO_CPP_ROOT)/networking
-# Path to the fmt installation
-ISHIKO_CPP_FMT_ROOT ?= $(FMT_ROOT)
 # Path to the Ishiko/C++ Time installation
 ISHIKO_CPP_TIME_ROOT ?= $(ISHIKO_CPP_ROOT)/time
 # Path to the Ishiko/C++ Types installation
@@ -103,43 +103,43 @@ all: ../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoHTTP-d,I
 	$(RANLIB) $@
 
 $(_builddir)IshikoHTTP_HTTPErrorCategory.o: ../../src/HTTPErrorCategory.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPErrorCategory.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPErrorCategory.cpp
 
 $(_builddir)IshikoHTTP_HTTPClient.o: ../../src/HTTPClient.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPClient.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPClient.cpp
 
 $(_builddir)IshikoHTTP_HTTPHeader.o: ../../src/HTTPHeader.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPHeader.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPHeader.cpp
 
 $(_builddir)IshikoHTTP_HTTPHeaders.o: ../../src/HTTPHeaders.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPHeaders.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPHeaders.cpp
 
 $(_builddir)IshikoHTTP_HTTPMethod.o: ../../src/HTTPMethod.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPMethod.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPMethod.cpp
 
 $(_builddir)IshikoHTTP_HTTPRequest.o: ../../src/HTTPRequest.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPRequest.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPRequest.cpp
 
 $(_builddir)IshikoHTTP_HTTPRequestPushParser.o: ../../src/HTTPRequestPushParser.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPRequestPushParser.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPRequestPushParser.cpp
 
 $(_builddir)IshikoHTTP_HTTPResponse.o: ../../src/HTTPResponse.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPResponse.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPResponse.cpp
 
 $(_builddir)IshikoHTTP_HTTPResponseBuilder.o: ../../src/HTTPResponseBuilder.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPResponseBuilder.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPResponseBuilder.cpp
 
 $(_builddir)IshikoHTTP_HTTPResponsePushParser.o: ../../src/HTTPResponsePushParser.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPResponsePushParser.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPResponsePushParser.cpp
 
 $(_builddir)IshikoHTTP_HTTPSClient.o: ../../src/HTTPSClient.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPSClient.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPSClient.cpp
 
 $(_builddir)IshikoHTTP_HTTPStatusCode.o: ../../src/HTTPStatusCode.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPStatusCode.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPStatusCode.cpp
 
 $(_builddir)IshikoHTTP_HTTPVersion.o: ../../src/HTTPVersion.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPVersion.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2 -I$(ISHIKO_CPP_NETWORKING_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I../../include/Ishiko/HTTP -std=c++11 ../../src/HTTPVersion.cpp
 
 clean:
 	rm -f $(_builddir)*.o
