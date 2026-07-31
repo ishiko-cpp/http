@@ -23,7 +23,7 @@ public:
     const char* message(int ev, char* buffer, size_t len) const noexcept override;
 
 private:
-    HTTPErrorCategory() noexcept = default;
+    HTTPErrorCategory() noexcept;
 };
 
 void Fail(HTTPErrorCategory::Value value, const std::string& message, const char* file, int line,

@@ -8,6 +8,11 @@
 
 using namespace Ishiko;
 
+HTTPErrorCategory::HTTPErrorCategory() noexcept
+    : ErrorCategory(ID(0x560fedc0687543f2ULL, 0x8b13eab00c72bab3ULL)) // 560fedc0-6875-43f2-8b13-eab00c72bab3
+{
+}
+
 const HTTPErrorCategory& HTTPErrorCategory::Get() noexcept
 {
     static HTTPErrorCategory theCategory;
